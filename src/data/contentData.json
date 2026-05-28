@@ -1,0 +1,192 @@
+{
+  "logo": "NQH.DEV",
+  "navigation": [
+    {"label": "Home", "target": "#home"},
+    {"label": "About", "target": "#about"},
+    {"label": "Skills", "target": "#skills"},
+    {"label": "Projects", "target": "#projects"},
+    {"label": "Experiences", "target": "#experiences"},
+    {"label": "Contact", "target": "#contact"}
+  ],
+  "resumeLabel": "Resume",
+  "hero": {
+    "name": "Nguyễn Quang Huy",
+    "roles": "BACKEND DEVELOPER / FULLSTACK DEVELOPER",
+    "description": "I build apps with AI, then wonder how they work.",
+    "primaryBtnText": "Xem dự án",
+    "secondaryBtnText": "Liên hệ",
+    "profileImage": "./assets/profile_robot.png"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "Tôi là cử nhân CNTT tại CMC University, định hướng trở thành Full-stack Developer (Java Spring Boot/React). Tôi có đam mê sâu sắc với việc xây dựng các hệ thống web hiện đại, có khả năng mở rộng, hiệu năng cao và bảo mật tốt.",
+      "Tôi nỗ lực kết hợp kiến thức nền tảng CNTT vững chắc với các kỹ năng thực tế như phát triển RESTful API và thiết kế UI/UX để tạo ra các giải pháp phần mềm toàn diện."
+    ],
+    "strengths": [
+      {
+        "id": "logic",
+        "tag": "01",
+        "title": "Logic & Data",
+        "description": "Tư duy cấu trúc, thuật toán tốt. Thành thạo thiết kế và tối ưu hóa cơ sở dữ liệu với MySQL và Supabase.",
+        "icon": "Binary"
+      },
+      {
+        "id": "fast-learner",
+        "tag": "02",
+        "title": "Fast Learner",
+        "description": "Thích nghi nhanh. Chủ động làm chủ và triển khai các công nghệ mới: Spring Boot, React, Angular, Docker.",
+        "icon": "Zap"
+      },
+      {
+        "id": "team-player",
+        "tag": "03",
+        "title": "Team Player",
+        "description": "Có kinh nghiệm thực tập tại CodeGym Software. Phối hợp tốt với Scrum, Git flow và triển khai trên VPS(Ubuntu).",
+        "icon": "Users"
+      },
+      {
+        "id": "clean-code",
+        "tag": "04",
+        "title": "Clean Code & Global",
+        "description": "Viết code sạch theo chuẩn SOLID. Sở hữu lợi thế tiếng Anh (IELTS 6.0) để đọc tài liệu và làm việc.",
+        "icon": "FileCode"
+      }
+    ]
+  },
+  "technicalArsenal": {
+    "title": "Technical Arsenal",
+    "subtitle": "Tools and technologies I use to bring ideas to life.",
+    "groups": [
+      {
+        "id": "languages",
+        "title": "Languages",
+        "icon": "Code2",
+        "items": ["Java", "JavaScript", "TypeScript", "SQL", "HTML5/CSS3"]
+      },
+      {
+        "id": "frameworks",
+        "title": "Frameworks",
+        "icon": "Layers",
+        "items": ["Spring Framework", "React (Vite)", "Angular", "Tailwind CSS"]
+      },
+      {
+        "id": "tools",
+        "title": "Tools & DevOps",
+        "icon": "Wrench",
+        "items": ["Git", "Docker", "VPS (Ubuntu) / Nginx", "Antigravity", "VS Code"]
+      },
+      {
+        "id": "databases",
+        "title": "Databases",
+        "icon": "Database",
+        "items": ["MySQL", "MongoDB", "Supabase"]
+      }
+    ]
+  },
+  "featuredProjects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my recent works and research.",
+    "projects": [
+      {
+        "id": "sis-project",
+        "title": "SIS | Hệ thống Quản lý Trường học Toàn diện",
+        "description": "Hệ thống quản lý trường học hỗ trợ quản lý sinh viên, giảng viên, lớp học và tài liệu học tập, tích hợp chatbot AI hỗ trợ tra cứu thông tin và phân quyền người dùng theo vai trò.",
+        "tags": ["Spring Boot", "React", "Keycloak", "Docker"],
+        "image": "./assets/project_sis.png",
+        "hasCaseStudy": true,
+        "caseStudyText": "VIEW CASE STUDY // DETAIL",
+        "demoUrl": "https://github.com/Huy210205",
+        "techStack": ["Java", "Spring Boot", "React (TypeScript)", "Vite", "Tailwind CSS", "Keycloak", "Docker"],
+        "features": [
+          {
+            "title": "Quản lý nghiệp vụ đào tạo",
+            "description": "Số hóa quy trình quản lý hồ sơ sinh viên, thông tin giảng viên, xếp lịch học, quản lý lớp học và lưu trữ/chia sẻ kho tài liệu học tập tập trung."
+          },
+          {
+            "title": "Bảo mật & Phân quyền chuyên sâu (RBAC)",
+            "description": "Tích hợp Keycloak để triển khai cơ chế xác thực tập trung (SSO) và phân quyền nghiêm ngặt theo các vai trò (Admin, Giảng viên, Sinh viên)."
+          },
+          {
+            "title": "Trợ lý ảo Chatbot AI",
+            "description": "Tích hợp chatbot thông minh hỗ trợ sinh viên và giảng viên tra cứu nhanh lịch học, kết quả học tập và các quy chế nhà trường một cách tự động."
+          },
+          {
+            "title": "Đóng gói & Triển khai",
+            "description": "Sử dụng Docker để container hóa toàn bộ các dịch vụ (Backend, Frontend, Keycloak), đảm bảo hệ thống vận hành đồng nhất từ local đến môi trường production."
+          }
+        ]
+      },
+      {
+        "id": "vintage-project",
+        "title": "VINTAGE | Hệ thống Thương mại Điện tử",
+        "description": "Hệ thống thương mại điện tử hỗ trợ mua sắm trực tuyến, quản lý sản phẩm, đơn hàng và người dùng, có trang quản trị và xác thực người dùng an toàn.",
+        "tags": ["Spring Boot", "Angular", "MySQL", "Docker", "Jenkins"],
+        "image": "./assets/project_vintage.png",
+        "hasCaseStudy": true,
+        "caseStudyText": "VIEW CASE STUDY // DETAIL",
+        "demoUrl": "https://github.com/Huy210205",
+        "techStack": ["Java", "Spring Boot", "Angular", "TypeScript", "RxJS", "SCSS", "MySQL", "Docker", "Jenkins"],
+        "features": [
+          {
+            "title": "Trải nghiệm mua sắm mượt mà",
+            "description": "Xây dựng luồng tính năng hoàn chỉnh cho khách hàng từ tìm kiếm, lọc sản phẩm theo danh mục, quản lý giỏ hàng trực quan đến tiến hành đặt hàng."
+          },
+          {
+            "title": "Bảng điều khiển Admin (Dashboard)",
+            "description": "Thiết kế trang quản trị toàn diện giúp quản lý danh mục sản phẩm, theo dõi trạng thái đơn hàng, xử lý tồn kho và quản lý thông tin người dùng."
+          },
+          {
+            "title": "Xử lý bất đồng bộ tối ưu",
+            "description": "Ứng dụng Angular kết hợp RxJS để quản lý các luồng dữ liệu bất đồng bộ (Streams), giúp tối ưu hóa hiệu năng render giao diện và tăng tốc độ phản hồi từ phía client."
+          },
+          {
+            "title": "Hạ tầng & CI/CD tự động",
+            "description": "Thiết kế cơ sở dữ liệu quan hệ tối ưu với MySQL; đồng thời cấu hình pipeline CI/CD tự động bằng Jenkins và Docker để chuẩn hóa quy trình kiểm thử và triển khai mã nguồn liên tục."
+          }
+        ]
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Experiences",
+    "steps": [
+      {
+        "id": "student",
+        "period": "2021 — PRESENT",
+        "title": "Cử nhân CNTT tại CMC University",
+        "description": "Học tập chuyên sâu về Công nghệ Thông tin tại CMC University với định hướng trở thành Full-stack Developer. Duy trì kết quả học tập tốt và song hành phát triển các kỹ năng thực chiến đáp ứng tiêu chuẩn của doanh nghiệp."
+      },
+      {
+        "id": "codegym",
+        "period": "08/2025 — 01/2026",
+        "title": "CodeGym Software – Thực tập sinh Full-stack Developer",
+        "description": "Phát triển Full-stack: Thiết kế logic Backend (Java Spring Framework) và xây dựng giao diện Frontend (React/Angular). Đảm bảo tính đồng nhất của môi trường phát triển bằng Docker và trực tiếp tham gia cấu hình hạ tầng triển khai trên VPS Ubuntu.",
+        "tags": ["SPRING BOOT", "REACT", "ANGULAR", "DOCKER", "VPS (UBUNTU)"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a project in mind or just want to chat about tech? I'm always open to new opportunities and collaborations.",
+    "email": "huyd57104@gmail.com",
+    "github": "github.com/Huy210205",
+    "githubUrl": "https://github.com/Huy210205",
+    "linkedin": "linkedin.com/in/nquanghuy",
+    "linkedinUrl": "https://linkedin.com/in/nquanghuy",
+    "placeholderName": "John Doe",
+    "placeholderEmail": "john@example.com",
+    "placeholderMessage": "How can I help you?",
+    "buttonText": "Send Message",
+    "successMessage": "Thank you! Your message has been sent successfully."
+  },
+  "footer": {
+    "brand": "NQH.DEV",
+    "tagline": "Constellation-grade performance.",
+    "links": [
+      {"label": "GitHub", "url": "https://github.com/Huy210205"},
+      {"label": "LinkedIn", "url": "https://linkedin.com/in/nquanghuy"},
+      {"label": "Email", "url": "mailto:huyd57104@gmail.com"}
+    ]
+  }
+}
