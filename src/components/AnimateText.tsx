@@ -1,5 +1,4 @@
-import { motion } from "motion/react";
-import { useRef } from "react";
+import { motion, type Variants } from "motion/react";
 
 interface WordsPullUpProps {
   text: string;
@@ -17,7 +16,7 @@ export function WordsPullUp({ text, className = "", showAsterisk = false }: Word
         staggerChildren: 0.08,
       },
     },
-  };
+  } satisfies Variants;
 
   const wordVars = {
     hidden: { opacity: 0, y: 30 },
@@ -25,11 +24,11 @@ export function WordsPullUp({ text, className = "", showAsterisk = false }: Word
       opacity: 1,
       y: 0,
       transition: {
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as const,
         duration: 0.8,
       },
     },
-  };
+  } satisfies Variants;
 
   return (
     <motion.span
@@ -78,7 +77,7 @@ export function WordsPullUpMultiStyle({ segments, className = "" }: WordsPullUpP
         staggerChildren: 0.06,
       },
     },
-  };
+  } satisfies Variants;
 
   const wordVars = {
     hidden: { opacity: 0, y: 25 },
@@ -86,11 +85,11 @@ export function WordsPullUpMultiStyle({ segments, className = "" }: WordsPullUpP
       opacity: 1,
       y: 0,
       transition: {
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as const,
         duration: 0.7,
       },
     },
-  };
+  } satisfies Variants;
 
   return (
     <motion.div
