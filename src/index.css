@@ -61,6 +61,10 @@ html {
   pointer-events: none;
 }
 
+.hero-video {
+  filter: none;
+}
+
 /* Complex Liquid Glass Style representing premium moody visual layer */
 .liquid-glass {
   background: rgba(16, 16, 16, 0.65);

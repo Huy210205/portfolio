@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 import contentData from "../data/contentData.json";
@@ -7,6 +8,35 @@ import { WordsPullUp } from "./AnimateText";
 const data = contentData as unknown as ContentData;
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [showPlayHint, setShowPlayHint] = useState(false);
+  const heroVideoSrc = `${import.meta.env.BASE_URL}hero-background.mp4`;
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    const tryPlay = async () => {
+      try {
+        await video.play();
+      } catch {
+        // Some mobile browsers still block background autoplay; keep the element mounted.
+      }
+    };
+
+    void tryPlay();
+
+    const timer = window.setTimeout(() => {
+      if (video.readyState < 2) {
+        setShowPlayHint(true);
+      }
+    }, 1800);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -22,30 +52,56 @@ export default function Hero() {
       {/* Outer wrapper with card-style inset rounding */}
       <div className="relative w-full min-h-[calc(100vh-3rem)] rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden flex items-center justify-center bg-zinc-950 border border-white/5">
         {/* Shared background so the hero always has depth on both desktop and mobile */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(222,219,200,0.20),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.10),_transparent_26%),linear-gradient(180deg,#111111_0%,#000000_72%)]" />
-        <div className="absolute inset-0 bg-noise opacity-[0.08] mix-blend-overlay pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(222,219,200,0.16),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_26%),linear-gradient(180deg,#111111_0%,#000000_72%)]" />
+        <div className="absolute inset-0 bg-noise opacity-[0.06] mix-blend-overlay pointer-events-none z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(222,219,200,0.03),_transparent_55%)] pointer-events-none z-10" />
         
         {/* Cinematic Video Background */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          className="absolute inset-x-0 top-0 h-full w-full object-cover object-center pointer-events-none z-0"
+          className="hero-video absolute inset-x-0 top-0 h-full w-full object-cover object-center pointer-events-none z-0"
+          onCanPlay={() => setShowPlayHint(false)}
+          onPlaying={() => setShowPlayHint(false)}
+          onError={() => setShowPlayHint(true)}
         >
           <source
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+            src={heroVideoSrc}
             type="video/mp4"
           />
         </video>
 
+        {showPlayHint ? (
+          <button
+            type="button"
+            onClick={async () => {
+              const video = videoRef.current;
+              if (!video) {
+                return;
+              }
+
+              try {
+                await video.play();
+                setShowPlayHint(false);
+              } catch {
+                setShowPlayHint(true);
+              }
+            }}
+            className="absolute left-6 bottom-20 sm:bottom-24 z-20 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs font-medium tracking-wide text-[#E1E0CC] backdrop-blur-md transition hover:bg-black/70 hover:border-[#DEDBC8]/30"
+          >
+            Chạm để bật nền
+          </button>
+        ) : null}
+
         {/* Ambient Noise overlay */}
-        <div className="absolute inset-0 noise-overlay opacity-[0.28] sm:opacity-[0.55] mix-blend-overlay pointer-events-none z-10" />
+        <div className="absolute inset-0 noise-overlay opacity-[0.55] mix-blend-overlay pointer-events-none z-10" />
 
         {/* Shadow Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/70 sm:from-black/40 sm:via-black/10 sm:to-black/85 pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/85 pointer-events-none z-10" />
 
         {/* Glowing visual backdrop */}
         <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#DEDBC8]/5 blur-[120px] rounded-full pointer-events-none z-10" />
