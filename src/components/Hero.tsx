@@ -21,9 +21,10 @@ export default function Hero() {
     >
       {/* Outer wrapper with card-style inset rounding */}
       <div className="relative w-full min-h-[calc(100vh-3rem)] rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden flex items-center justify-center bg-zinc-950 border border-white/5">
-        {/* Mobile fallback background so the hero still has depth when video playback is unavailable */}
-        <div className="absolute inset-0 sm:hidden bg-[radial-gradient(circle_at_top,_rgba(222,219,200,0.18),_transparent_40%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_24%),linear-gradient(180deg,#101010_0%,#000000_72%)]" />
-        <div className="absolute inset-0 sm:hidden bg-noise opacity-[0.12] mix-blend-overlay pointer-events-none z-10" />
+        {/* Shared background so the hero always has depth on both desktop and mobile */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(222,219,200,0.20),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.10),_transparent_26%),linear-gradient(180deg,#111111_0%,#000000_72%)]" />
+        <div className="absolute inset-0 bg-noise opacity-[0.08] mix-blend-overlay pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(222,219,200,0.03),_transparent_55%)] pointer-events-none z-10" />
         
         {/* Cinematic Video Background */}
         <video
@@ -31,7 +32,8 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="absolute inset-x-0 top-0 h-full w-full object-cover pointer-events-none z-0 hidden sm:block"
+          preload="auto"
+          className="absolute inset-x-0 top-0 h-full w-full object-cover object-center pointer-events-none z-0"
         >
           <source
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
@@ -40,10 +42,10 @@ export default function Hero() {
         </video>
 
         {/* Ambient Noise overlay */}
-        <div className="absolute inset-0 noise-overlay opacity-[0.55] mix-blend-overlay pointer-events-none z-10 hidden sm:block" />
+        <div className="absolute inset-0 noise-overlay opacity-[0.28] sm:opacity-[0.55] mix-blend-overlay pointer-events-none z-10" />
 
         {/* Shadow Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/85 pointer-events-none z-10 hidden sm:block" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/70 sm:from-black/40 sm:via-black/10 sm:to-black/85 pointer-events-none z-10" />
 
         {/* Glowing visual backdrop */}
         <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#DEDBC8]/5 blur-[120px] rounded-full pointer-events-none z-10" />
