@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 import contentData from "../data/contentData.json";
@@ -9,7 +9,6 @@ const data = contentData as unknown as ContentData;
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [showPlayHint, setShowPlayHint] = useState(false);
   const heroVideoSrc = `${import.meta.env.BASE_URL}hero-background.mp4`;
 
   useEffect(() => {
@@ -28,13 +27,7 @@ export default function Hero() {
 
     void tryPlay();
 
-    const timer = window.setTimeout(() => {
-      if (video.readyState < 2) {
-        setShowPlayHint(true);
-      }
-    }, 1800);
-
-    return () => window.clearTimeout(timer);
+    return undefined;
   }, []);
 
   const handleScrollTo = (id: string) => {
@@ -65,37 +58,15 @@ export default function Hero() {
           playsInline
           preload="auto"
           className="hero-video absolute inset-x-0 top-0 h-full w-full object-cover object-center pointer-events-none z-0"
-          onCanPlay={() => setShowPlayHint(false)}
-          onPlaying={() => setShowPlayHint(false)}
-          onError={() => setShowPlayHint(true)}
+          onError={() => {
+            // Keep the visual background layers visible even if the video cannot play.
+          }}
         >
           <source
             src={heroVideoSrc}
             type="video/mp4"
           />
         </video>
-
-        {showPlayHint ? (
-          <button
-            type="button"
-            onClick={async () => {
-              const video = videoRef.current;
-              if (!video) {
-                return;
-              }
-
-              try {
-                await video.play();
-                setShowPlayHint(false);
-              } catch {
-                setShowPlayHint(true);
-              }
-            }}
-            className="absolute left-6 bottom-20 sm:bottom-24 z-20 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs font-medium tracking-wide text-[#E1E0CC] backdrop-blur-md transition hover:bg-black/70 hover:border-[#DEDBC8]/30"
-          >
-            Chạm để bật nền
-          </button>
-        ) : null}
 
         {/* Ambient Noise overlay */}
         <div className="absolute inset-0 noise-overlay opacity-[0.55] mix-blend-overlay pointer-events-none z-10" />
