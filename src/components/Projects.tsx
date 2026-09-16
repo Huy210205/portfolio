@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
-import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, ShoppingBag } from "lucide-react";
+import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, ShoppingBag, Copy, Check, KeyRound } from "lucide-react";
 import contentData from "../data/contentData.json";
 import { FeaturedProjectsSection, ProjectItem } from "../types";
 import { WordsPullUp } from "./AnimateText";
@@ -28,7 +28,14 @@ const projectDetails: Record<string, { challenge: string; solution: string; outc
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  const handleCopy = (text: string, key: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 1800);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -305,6 +312,78 @@ export default function Projects() {
                       </div>
                     )}
 
+                    {/* Demo Accounts section if present */}
+                    {selectedProject.accounts && selectedProject.accounts.length > 0 && (
+                      <div className="space-y-3 pt-2">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-[9px] tracking-widest text-[#DEDBC8] uppercase block font-bold flex items-center gap-1.5">
+                            <KeyRound size={12} className="text-[#DEDBC8]" />
+                            DEMO ACCOUNTS // TÀI KHOẢN TRẢI NGHIỆM
+                          </span>
+                          <span className="font-mono text-[9px] text-[#DEDBC8]/60">
+                            Click vào để sao chép
+                          </span>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                          {selectedProject.accounts.map((acc: any, aIdx: number) => (
+                            <div
+                              key={aIdx}
+                              className="p-4 rounded-xl bg-[#212121]/30 border border-white/10 flex flex-col justify-between gap-3 hover:border-[#DEDBC8]/30 hover:bg-[#212121]/50 transition-all duration-300"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="font-mono text-[10px] font-bold text-black bg-[#DEDBC8] px-2.5 py-0.5 rounded-md uppercase tracking-wide">
+                                  {acc.role}
+                                </span>
+                              </div>
+
+                              <div className="space-y-2 text-xs font-mono">
+                                {/* Username copy row */}
+                                <button
+                                  type="button"
+                                  onClick={() => handleCopy(acc.username, `user-${aIdx}`)}
+                                  className="w-full flex items-center justify-between p-2 rounded-lg bg-black/50 border border-white/5 hover:border-[#DEDBC8]/30 group transition-all text-left cursor-pointer"
+                                  title="Click để sao chép tài khoản"
+                                >
+                                  <div className="truncate mr-1 min-w-0">
+                                    <span className="text-gray-500 text-[9px] uppercase tracking-wider block">TK</span>
+                                    <span className="text-[#E1E0CC] truncate block text-[11px] font-mono">{acc.username}</span>
+                                  </div>
+                                  {copiedKey === `user-${aIdx}` ? (
+                                    <span className="flex items-center gap-1 text-green-400 text-[10px] shrink-0 font-sans">
+                                      <Check size={12} /> Đã chép
+                                    </span>
+                                  ) : (
+                                    <Copy size={12} className="text-gray-500 group-hover:text-[#DEDBC8] shrink-0 transition-colors" />
+                                  )}
+                                </button>
+
+                                {/* Password copy row */}
+                                <button
+                                  type="button"
+                                  onClick={() => handleCopy(acc.password, `pass-${aIdx}`)}
+                                  className="w-full flex items-center justify-between p-2 rounded-lg bg-black/50 border border-white/5 hover:border-[#DEDBC8]/30 group transition-all text-left cursor-pointer"
+                                  title="Click để sao chép mật khẩu"
+                                >
+                                  <div className="truncate mr-1 min-w-0">
+                                    <span className="text-gray-500 text-[9px] uppercase tracking-wider block">MK</span>
+                                    <span className="text-[#E1E0CC] block text-[11px] font-mono">{acc.password}</span>
+                                  </div>
+                                  {copiedKey === `pass-${aIdx}` ? (
+                                    <span className="flex items-center gap-1 text-green-400 text-[10px] shrink-0 font-sans">
+                                      <Check size={12} /> Đã chép
+                                    </span>
+                                  ) : (
+                                    <Copy size={12} className="text-gray-500 group-hover:text-[#DEDBC8] shrink-0 transition-colors" />
+                                  )}
+                                </button>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                   </div>
 
                   {/* Footer interactive actions inside modal with link demo */}
@@ -314,10 +393,10 @@ export default function Projects() {
                         href={selectedProject.demoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-6 py-3 rounded-full border border-[#DEDBC8]/30 hover:border-[#DEDBC8] bg-[#DEDBC8]/5 hover:bg-[#DEDBC8]/10 text-[#DEDBC8] hover:text-white transition-all cursor-pointer inline-flex items-center justify-center gap-2 font-mono text-xs font-bold tracking-widest uppercase"
+                        className="px-6 py-3 rounded-full border border-[#DEDBC8]/30 hover:border-[#DEDBC8] bg-[#DEDBC8]/10 hover:bg-[#DEDBC8] text-[#DEDBC8] hover:text-black transition-all cursor-pointer inline-flex items-center justify-center gap-2 font-mono text-xs font-bold tracking-widest uppercase shadow-lg shadow-black/40 group"
                       >
-                        <ExternalLink size={14} />
-                        VIEW LIVE DEMO // LINK CODE
+                        <ExternalLink size={14} className="group-hover:scale-110 transition-transform" />
+                        {selectedProject.demoButtonText || (selectedProject.demoUrl.includes("github.com") ? "VIEW SOURCE GITHUB" : "TRẢI NGHIỆM HỆ THỐNG // LIVE DEMO")}
                       </a>
                     </div>
                   )}

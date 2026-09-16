@@ -25,7 +25,6 @@ const categoryExplanations: Record<string, { intro: string; depth: string[]; exp
     depth: [
       "Spring Framework: Làm chủ kiến trúc Spring Boot (Spring MVC, DI/IOC, Spring Security bảo mật phân quyền đa lớp và Spring Data JPA).",
       "React (Vite): Xây dựng mô hình ứng dụng Single Page (SPA) nhanh chóng, tối ưu hóa quản lý State, Hook và tái sử dụng Component.",
-      "Angular: Triển khai ứng dụng doanh nghiệp có cấu trúc module chặt chẽ, tối ưu luồng dữ liệu phản xạ thông qua RxJS.",
       "Tailwind CSS: Thiết kế giao diện thần tốc nhờ hệ thống lớp tiện ích (utility classes) tối tân, responsive tối ưu trên mọi màn hình."
     ],
     expertiseLevel: "Phát Triển Đa Nền Tảng & RESTful API"
@@ -44,10 +43,9 @@ const categoryExplanations: Record<string, { intro: string; depth: string[]; exp
     intro: "Mô hình hóa dữ liệu thông minh, duy trì tính toàn vẹn thông tin và cung cấp tốc độ phản hồi tối ưu dưới tải cao.",
     depth: [
       "MySQL: Thiết lập quan hệ liên kết khóa ngoại chặt chẽ, thiết kế Database chuẩn xác và thực thi các thủ tục lưu trữ an toàn.",
-      "MongoDB: Quản lý dữ liệu dạng NoSQL linh hoạt, lưu trữ tài liệu đa cấu trúc, mở rộng dữ liệu ngang mượt mà.",
       "Supabase: Tận dụng cơ sở dữ liệu Postgres trên đám mây tích hợp sẵn tính năng xác thực và thời gian thực thế hệ mới."
     ],
-    expertiseLevel: "Quản Trị Cơ Sở Dữ Liệu Phân Tán"
+    expertiseLevel: "Quản Trị Cơ Sở Dữ Liệu Quan Hệ & Cloud DB"
   }
 };
 

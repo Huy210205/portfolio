@@ -39,6 +39,12 @@ export interface TechnicalArsenalSection {
   groups: ArsenalGroup[];
 }
 
+export interface ProjectAccount {
+  role: string;
+  username: string;
+  password: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -48,8 +54,10 @@ export interface ProjectItem {
   hasCaseStudy: boolean;
   caseStudyText?: string;
   demoUrl?: string;
+  demoButtonText?: string;
   features?: { title: string; description: string }[];
   techStack?: string[];
+  accounts?: ProjectAccount[];
 }
 
 export interface FeaturedProjectsSection {
@@ -77,8 +85,6 @@ export interface ContactSection {
   email: string;
   github: string;
   githubUrl: string;
-  linkedin: string;
-  linkedinUrl: string;
   placeholderName: string;
   placeholderEmail: string;
   placeholderMessage: string;

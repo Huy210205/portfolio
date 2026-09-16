@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 import contentData from "../data/contentData.json";
 import { ContactSection } from "../types";
 import { WordsPullUp } from "./AnimateText";
@@ -29,8 +29,8 @@ export default function Contact() {
           {data.subtitle}
         </p>
 
-        {/* List links with matching aesthetic - Grid of 3 columns for desktop, 1 for mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl">
+        {/* List links with matching aesthetic - Grid of 2 columns for desktop, 1 for mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl">
           {/* Email channel */}
           <a
             href={`mailto:${data.email}`}
@@ -58,22 +58,6 @@ export default function Contact() {
             <div className="font-sans">
               <p className="text-[10px] text-[#DEDBC8]/70 uppercase tracking-widest font-semibold mb-1">GitHub Engine</p>
               <p className="text-gray-300 text-xs sm:text-sm group-hover:text-white transition-colors font-medium">{data.github}</p>
-            </div>
-          </a>
-
-          {/* LinkedIn networking */}
-          <a
-            href={data.linkedinUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="group flex flex-col items-center text-center gap-4 bg-[#212121]/30 border border-white/5 p-6 rounded-2xl hover:bg-[#212121]/60 hover:border-[#DEDBC8]/20 hover:text-white transition-all duration-300 liquid-glass"
-          >
-            <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-[#DEDBC8] group-hover:bg-[#DEDBC8]/10 group-hover:scale-105 transition-all">
-              <Linkedin size={22} />
-            </div>
-            <div className="font-sans">
-              <p className="text-[10px] text-[#DEDBC8]/70 uppercase tracking-widest font-semibold mb-1">LinkedIn Portal</p>
-              <p className="text-gray-300 text-xs sm:text-sm group-hover:text-white transition-colors font-medium">{data.linkedin}</p>
             </div>
           </a>
         </div>
