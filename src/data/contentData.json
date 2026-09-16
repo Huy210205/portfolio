@@ -90,8 +90,8 @@
     "projects": [
       {
         "id": "sis-project",
-        "title": "SIS | Hệ thống Quản lý Trường học Toàn diện",
-        "description": "Hệ thống quản lý trường học hỗ trợ quản lý sinh viên, giảng viên, lớp học và tài liệu học tập, tích hợp chatbot AI hỗ trợ tra cứu thông tin và phân quyền người dùng theo vai trò.",
+        "title": "LMS - Hệ thống Quản lí Học tập",
+        "description": "Hệ thống quản lý học tập hỗ trợ quản lý sinh viên, giảng viên, lớp học và tài liệu học tập, tích hợp chatbot AI hỗ trợ tra cứu thông tin và phân quyền người dùng theo vai trò.",
         "tags": ["Spring Boot", "React", "Keycloak", "Docker"],
         "image": "./assets/project_sis.png",
         "hasCaseStudy": true,
