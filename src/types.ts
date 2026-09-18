@@ -55,6 +55,7 @@ export interface ProjectItem {
   caseStudyText?: string;
   demoUrl?: string;
   demoButtonText?: string;
+  githubUrl?: string;
   features?: { title: string; description: string }[];
   techStack?: string[];
   accounts?: ProjectAccount[];

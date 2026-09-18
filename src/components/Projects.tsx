@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
-import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, ShoppingBag, Copy, Check, KeyRound } from "lucide-react";
+import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, ShoppingBag, Shield, Copy, Check, KeyRound } from "lucide-react";
 import contentData from "../data/contentData.json";
 import { FeaturedProjectsSection, ProjectItem } from "../types";
 import { WordsPullUp } from "./AnimateText";
@@ -23,6 +23,13 @@ const projectDetails: Record<string, { challenge: string; solution: string; outc
     outcome: "Đơn hàng và giỏ hàng xử lý mượt mà, đồng hành cùng dashboard quản trị trực quan. Triển khai phân phối tự động chỉ trong vài phút, tối ưu hóa tối đa chi phí vận hành hạ tầng.",
     duration: "4 Tháng",
     role: "Full-stack Developer & DevOps Engineer"
+  },
+  "websecai-project": {
+    challenge: "Tự động hóa toàn diện quy trình rà soát lỗ hổng web phức tạp (SQLi, XSS, CSRF, LFI) với độ chính xác cao, đồng thời phân cấp mức độ nguy hại chuẩn xác và đưa ra chỉ dẫn khắc phục chi tiết theo ngữ cảnh thực tế.",
+    solution: "Phát triển engine crawler thông minh bằng BeautifulSoup & FastAPI bất đồng bộ; ứng dụng mô hình Random Forest (Scikit-learn) phân loại rủi ro và tích hợp LLaMA 3.3 70B (qua Groq) để tạo hướng dẫn khắc phục tự động.",
+    outcome: "Quét và phát hiện lỗ hổng tự động với thời gian phản hồi nhanh, báo cáo chi tiết kèm khuyến nghị chuyên sâu từ mô hình AI hàng đầu, hỗ trợ tối đa việc bảo vệ ứng dụng web.",
+    duration: "3 Tháng",
+    role: "Security & AI/Full-stack Developer"
   }
 };
 
@@ -68,7 +75,7 @@ export default function Projects() {
       <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-[#DEDBC8]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Elegant Section line header */}
         <div className="flex flex-col items-start gap-2 mb-4">
           <span className="font-mono text-[10px] tracking-widest text-[#DEDBC8] uppercase">
@@ -79,7 +86,7 @@ export default function Projects() {
           </h2>
           <div className="h-[1px] bg-[#DEDBC8]/10 w-full mt-2" />
         </div>
-        
+
         <p className="font-sans text-gray-400 text-sm sm:text-base leading-relaxed mb-16 max-w-2xl" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
           {data.subtitle}
         </p>
@@ -119,6 +126,9 @@ export default function Projects() {
                         )}
                         {project.id === "vintage-project" && (
                           <ShoppingBag className="w-5 h-5 text-[#DEDBC8]" />
+                        )}
+                        {project.id === "websecai-project" && (
+                          <Shield className="w-5 h-5 text-[#DEDBC8]" />
                         )}
                         <h3 className="font-sans text-lg sm:text-xl font-semibold text-white tracking-wide hover:text-[#DEDBC8] transition-colors cursor-pointer" onClick={() => setSelectedProject(project)}>
                           {project.title}
@@ -166,7 +176,7 @@ export default function Projects() {
         <AnimatePresence>
           {selectedProject && (
             <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-              
+
               {/* Dark blur backdrop */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -197,7 +207,7 @@ export default function Projects() {
 
                 {/* Scrollable region of modal */}
                 <div className="overflow-y-auto w-full p-6 sm:p-10 space-y-8">
-                  
+
                   {/* Banner / Header Image inside the modal */}
                   <div className="relative rounded-2xl overflow-hidden aspect-[21/9] bg-zinc-950 border border-white/5">
                     <img
@@ -206,7 +216,7 @@ export default function Projects() {
                       className="w-full h-full object-cover object-center grayscale contrast-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-                    
+
                     {/* Dynamic absolute title overlay inside banner */}
                     <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 right-6">
                       <div className="flex flex-wrap gap-1.5 mb-2">
@@ -227,7 +237,7 @@ export default function Projects() {
 
                   {/* Main Case Study Core columns */}
                   <div className="space-y-8">
-                    
+
                     {/* Key features display section if present */}
                     {selectedProject.features && selectedProject.features.length > 0 ? (
                       <div className="space-y-4">
@@ -386,18 +396,31 @@ export default function Projects() {
 
                   </div>
 
-                  {/* Footer interactive actions inside modal with link demo */}
-                  {selectedProject.demoUrl && (
-                    <div className="pt-6 border-t border-white/5 flex justify-center">
-                      <a
-                        href={selectedProject.demoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-6 py-3 rounded-full border border-[#DEDBC8]/30 hover:border-[#DEDBC8] bg-[#DEDBC8]/10 hover:bg-[#DEDBC8] text-[#DEDBC8] hover:text-black transition-all cursor-pointer inline-flex items-center justify-center gap-2 font-mono text-xs font-bold tracking-widest uppercase shadow-lg shadow-black/40 group"
-                      >
-                        <ExternalLink size={14} className="group-hover:scale-110 transition-transform" />
-                        {selectedProject.demoButtonText || (selectedProject.demoUrl.includes("github.com") ? "VIEW SOURCE GITHUB" : "TRẢI NGHIỆM HỆ THỐNG // LIVE DEMO")}
-                      </a>
+                  {/* Footer interactive actions inside modal with link demo / github */}
+                  {(selectedProject.demoUrl || selectedProject.githubUrl) && (
+                    <div className="pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-4">
+                      {selectedProject.demoUrl && (
+                        <a
+                          href={selectedProject.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-6 py-3 rounded-full border border-[#DEDBC8]/30 hover:border-[#DEDBC8] bg-[#DEDBC8]/10 hover:bg-[#DEDBC8] text-[#DEDBC8] hover:text-black transition-all cursor-pointer inline-flex items-center justify-center gap-2 font-mono text-xs font-bold tracking-widest uppercase shadow-lg shadow-black/40 group"
+                        >
+                          <ExternalLink size={14} className="group-hover:scale-110 transition-transform" />
+                          {selectedProject.demoButtonText || "TRẢI NGHIỆM HỆ THỐNG // LIVE DEMO"}
+                        </a>
+                      )}
+                      {selectedProject.githubUrl && (
+                        <a
+                          href={selectedProject.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-6 py-3 rounded-full border border-white/20 hover:border-[#DEDBC8] bg-white/5 hover:bg-white/15 text-[#E1E0CC] hover:text-[#DEDBC8] transition-all cursor-pointer inline-flex items-center justify-center gap-2 font-mono text-xs font-bold tracking-widest uppercase shadow-lg shadow-black/40 group"
+                        >
+                          <ExternalLink size={14} className="group-hover:scale-110 transition-transform" />
+                          SOURCE CODE GITHUB
+                        </a>
+                      )}
                     </div>
                   )}
 

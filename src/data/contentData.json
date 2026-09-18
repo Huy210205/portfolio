@@ -1,12 +1,30 @@
 {
   "logo": "NQH.DEV",
   "navigation": [
-    {"label": "Home", "target": "#home"},
-    {"label": "About", "target": "#about"},
-    {"label": "Skills", "target": "#skills"},
-    {"label": "Projects", "target": "#projects"},
-    {"label": "Experiences", "target": "#experiences"},
-    {"label": "Contact", "target": "#contact"}
+    {
+      "label": "Home",
+      "target": "#home"
+    },
+    {
+      "label": "About",
+      "target": "#about"
+    },
+    {
+      "label": "Skills",
+      "target": "#skills"
+    },
+    {
+      "label": "Projects",
+      "target": "#projects"
+    },
+    {
+      "label": "Experiences",
+      "target": "#experiences"
+    },
+    {
+      "label": "Contact",
+      "target": "#contact"
+    }
   ],
   "resumeLabel": "Resume",
   "hero": {
@@ -42,7 +60,7 @@
         "id": "team-player",
         "tag": "03",
         "title": "Team Player",
-        "description": "Có kinh nghiệm thực tập tại CodeGym Software. Phối hợp tốt với Scrum, Git flow và triển khai trên VPS(Ubuntu).",
+        "description": "Có kinh nghiệm kiến tập tại CodeGym Software. Phối hợp tốt với Scrum, Git flow và triển khai trên VPS(Ubuntu).",
         "icon": "Users"
       },
       {
@@ -62,25 +80,44 @@
         "id": "languages",
         "title": "Languages",
         "icon": "Code2",
-        "items": ["Java", "JavaScript", "TypeScript", "SQL", "HTML5/CSS3"]
+        "items": [
+          "Java",
+          "JavaScript",
+          "TypeScript",
+          "SQL",
+          "HTML5/CSS3"
+        ]
       },
       {
         "id": "frameworks",
         "title": "Frameworks",
         "icon": "Layers",
-        "items": ["Spring Framework", "React (Vite)", "Tailwind CSS"]
+        "items": [
+          "Spring Framework",
+          "React (Vite)",
+          "Tailwind CSS"
+        ]
       },
       {
         "id": "tools",
         "title": "Tools & DevOps",
         "icon": "Wrench",
-        "items": ["Git", "Docker", "VPS (Ubuntu) / Nginx", "Antigravity", "VS Code"]
+        "items": [
+          "Git",
+          "Docker",
+          "VPS (Ubuntu) / Nginx",
+          "Antigravity",
+          "VS Code"
+        ]
       },
       {
         "id": "databases",
         "title": "Databases",
         "icon": "Database",
-        "items": ["MySQL", "Supabase"]
+        "items": [
+          "MySQL",
+          "Supabase"
+        ]
       }
     ]
   },
@@ -92,11 +129,17 @@
         "id": "sis-project",
         "title": "LMS - Hệ thống Quản lí Học tập",
         "description": "Hệ thống quản lý học tập hỗ trợ quản lý sinh viên, giảng viên, lớp học và tài liệu học tập, tích hợp chatbot AI hỗ trợ tra cứu thông tin và phân quyền người dùng theo vai trò.",
-        "tags": ["Spring Boot", "React", "Keycloak", "Docker"],
+        "tags": [
+          "Spring Boot",
+          "React",
+          "Keycloak",
+          "Docker"
+        ],
         "image": "./assets/project_sis.png",
         "hasCaseStudy": true,
         "demoUrl": "https://educenter.io.vn/",
         "demoButtonText": "TRẢI NGHIỆM HỆ THỐNG // LIVE DEMO",
+        "githubUrl": "https://github.com/codegym-software/SCC-SIS-BE.git",
         "accounts": [
           {
             "role": "Admin",
@@ -114,7 +157,15 @@
             "password": "123456"
           }
         ],
-        "techStack": ["Java", "Spring Boot", "React (TypeScript)", "Vite", "Tailwind CSS", "Keycloak", "Docker"],
+        "techStack": [
+          "Java",
+          "Spring Boot",
+          "React (TypeScript)",
+          "Vite",
+          "Tailwind CSS",
+          "Keycloak",
+          "Docker"
+        ],
         "features": [
           {
             "title": "Quản lý nghiệp vụ đào tạo",
@@ -136,15 +187,30 @@
       },
       {
         "id": "vintage-project",
-        "title": "VINTAGE | Hệ thống Thương mại Điện tử",
+        "title": "VintageShop - Hệ Thống Bán Hàng Dược Phẩm & Thực Phẩm Chức Năng",
         "description": "Hệ thống thương mại điện tử hỗ trợ mua sắm trực tuyến, quản lý sản phẩm, đơn hàng và người dùng, có trang quản trị và xác thực người dùng an toàn.",
-        "tags": ["Spring Boot", "Angular", "MySQL", "Docker", "Jenkins"],
+        "tags": [
+          "Spring Boot",
+          "Angular",
+          "MySQL",
+          "Docker",
+          "Jenkins"
+        ],
         "image": "./assets/project_vintage.png",
         "hasCaseStudy": true,
         "caseStudyText": "VIEW CASE STUDY // DETAIL",
-        "demoUrl": "https://github.com/Huy210205/VintageShop",
-        "demoButtonText": "VIEW SOURCE GITHUB",
-        "techStack": ["Java", "Spring Boot", "Angular", "TypeScript", "RxJS", "SCSS", "MySQL", "Docker", "Jenkins"],
+        "githubUrl": "https://github.com/Huy210205/VintageShop.git",
+        "techStack": [
+          "Java",
+          "Spring Boot",
+          "Angular",
+          "TypeScript",
+          "RxJS",
+          "SCSS",
+          "MySQL",
+          "Docker",
+          "Jenkins"
+        ],
         "features": [
           {
             "title": "Trải nghiệm mua sắm mượt mà",
@@ -163,6 +229,58 @@
             "description": "Thiết kế cơ sở dữ liệu quan hệ tối ưu với MySQL; đồng thời cấu hình pipeline CI/CD tự động bằng Jenkins và Docker để chuẩn hóa quy trình kiểm thử và triển khai mã nguồn liên tục."
           }
         ]
+      },
+      {
+        "id": "websecai-project",
+        "title": "WEBSECAI | Hệ thống Phân tích & Đánh giá Lỗ hổng Bảo mật Website",
+        "description": "Hệ thống phân tích và đánh giá lỗ hổng bảo mật website, hỗ trợ tự động thu thập và quét các lỗ hổng SQL Injection, XSS, CSRF, LFI, sử dụng Machine Learning để phân loại mức độ nghiêm trọng và LLM để hỗ trợ đưa ra hướng dẫn khắc phục.",
+        "tags": [
+          "FastAPI",
+          "React",
+          "Machine Learning",
+          "LLaMA 3.3 70B",
+          "Docker"
+        ],
+        "image": "./assets/project_websec.png",
+        "hasCaseStudy": true,
+        "caseStudyText": "VIEW CASE STUDY // DETAIL",
+        "githubUrl": "https://github.com/Huy210205/doan.git",
+        "techStack": [
+          "Python",
+          "FastAPI",
+          "React",
+          "Vite",
+          "PostgreSQL",
+          "SQLAlchemy",
+          "Flyway",
+          "JWT",
+          "Bcrypt",
+          "BeautifulSoup",
+          "Scikit-learn",
+          "Random Forest",
+          "Groq",
+          "LLaMA 3.3 70B",
+          "Docker",
+          "Docker Compose"
+        ],
+        "features": [
+          {
+            "title": "Quét & Thu thập Lỗ hổng Tự động",
+            "description": "Sử dụng BeautifulSoup và crawler engine tự động rà quét bề mặt tấn công, phát hiện các lỗ hổng bảo mật phổ biến như SQL Injection, XSS, CSRF và LFI."
+          },
+          {
+            "title": "Phân loại Mức độ Nghiêm trọng bằng ML",
+            "description": "Tích hợp mô hình Machine Learning (Random Forest huấn luyện bằng Scikit-learn) để phân tích, đánh giá và xếp hạng mức độ nghiêm trọng của các rủi ro phát hiện được."
+          },
+          {
+            "title": "Khuyến nghị Khắc phục với LLM (LLaMA 3.3 70B)",
+            "description": "Kết nối API Groq Cloud khai thác sức mạnh của mô hình LLaMA 3.3 70B, tự động tạo tài liệu phân tích chi tiết và đề xuất giải pháp vá lỗi chính xác cho lập trình viên."
+          },
+          {
+            "title": "Kiến trúc Hiện đại & Container hóa",
+            "description": "Xây dựng Backend với FastAPI bất đồng bộ hiệu năng cao, cơ sở dữ liệu PostgreSQL quản lý migration bằng Flyway, bảo mật xác thực JWT/Bcrypt và đóng gói hoàn chỉnh bằng Docker Compose."
+          }
+        ]
       }
     ]
   },
@@ -178,9 +296,14 @@
       {
         "id": "codegym",
         "period": "08/2025 — 12/2025",
-        "title": "CodeGym Software – Thực tập sinh Full-stack Developer",
+        "title": "CodeGym Software – Kiến tập sinh Full-stack Developer",
         "description": "Phát triển Full-stack: Thiết kế logic Backend (Java Spring Framework) và xây dựng giao diện Frontend (React). Đảm bảo tính đồng nhất của môi trường phát triển bằng Docker và trực tiếp tham gia cấu hình hạ tầng triển khai trên VPS Ubuntu.",
-        "tags": ["SPRING BOOT", "REACT", "DOCKER", "VPS (UBUNTU)"]
+        "tags": [
+          "SPRING BOOT",
+          "REACT",
+          "DOCKER",
+          "VPS (UBUNTU)"
+        ]
       }
     ]
   },
@@ -200,8 +323,14 @@
     "brand": "NQH.DEV",
     "tagline": "Constellation-grade performance.",
     "links": [
-      {"label": "GitHub", "url": "https://github.com/Huy210205"},
-      {"label": "Email", "url": "mailto:huyd57104@gmail.com"}
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Huy210205"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:huyd57104@gmail.com"
+      }
     ]
   }
 }
