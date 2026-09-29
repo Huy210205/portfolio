@@ -186,51 +186,6 @@
         ]
       },
       {
-        "id": "vintage-project",
-        "title": "VintageShop - Hệ Thống Bán Hàng Dược Phẩm & Thực Phẩm Chức Năng",
-        "description": "Hệ thống thương mại điện tử hỗ trợ mua sắm trực tuyến, quản lý sản phẩm, đơn hàng và người dùng, có trang quản trị và xác thực người dùng an toàn.",
-        "tags": [
-          "Spring Boot",
-          "Angular",
-          "MySQL",
-          "Docker",
-          "Jenkins"
-        ],
-        "image": "./assets/project_vintage.png",
-        "hasCaseStudy": true,
-        "caseStudyText": "VIEW CASE STUDY // DETAIL",
-        "githubUrl": "https://github.com/Huy210205/VintageShop.git",
-        "techStack": [
-          "Java",
-          "Spring Boot",
-          "Angular",
-          "TypeScript",
-          "RxJS",
-          "SCSS",
-          "MySQL",
-          "Docker",
-          "Jenkins"
-        ],
-        "features": [
-          {
-            "title": "Trải nghiệm mua sắm mượt mà",
-            "description": "Xây dựng luồng tính năng hoàn chỉnh cho khách hàng từ tìm kiếm, lọc sản phẩm theo danh mục, quản lý giỏ hàng trực quan đến tiến hành đặt hàng."
-          },
-          {
-            "title": "Bảng điều khiển Admin (Dashboard)",
-            "description": "Thiết kế trang quản trị toàn diện giúp quản lý danh mục sản phẩm, theo dõi trạng thái đơn hàng, xử lý tồn kho và quản lý thông tin người dùng."
-          },
-          {
-            "title": "Xử lý bất đồng bộ tối ưu",
-            "description": "Ứng dụng Angular kết hợp RxJS để quản lý các luồng dữ liệu bất đồng bộ (Streams), giúp tối ưu hóa hiệu năng render giao diện và tăng tốc độ phản hồi từ phía client."
-          },
-          {
-            "title": "Hạ tầng & CI/CD tự động",
-            "description": "Thiết kế cơ sở dữ liệu quan hệ tối ưu với MySQL; đồng thời cấu hình pipeline CI/CD tự động bằng Jenkins và Docker để chuẩn hóa quy trình kiểm thử và triển khai mã nguồn liên tục."
-          }
-        ]
-      },
-      {
         "id": "websecai-project",
         "title": "WEBSECAI | Hệ thống Phân tích & Đánh giá Lỗ hổng Bảo mật Website",
         "description": "Hệ thống phân tích và đánh giá lỗ hổng bảo mật website, hỗ trợ tự động thu thập và quét các lỗ hổng SQL Injection, XSS, CSRF, LFI, sử dụng Machine Learning để phân loại mức độ nghiêm trọng và LLM để hỗ trợ đưa ra hướng dẫn khắc phục.",
