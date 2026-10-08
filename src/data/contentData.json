@@ -236,6 +236,54 @@
             "description": "Xây dựng Backend với FastAPI bất đồng bộ hiệu năng cao, cơ sở dữ liệu PostgreSQL quản lý migration bằng Flyway, bảo mật xác thực JWT/Bcrypt và đóng gói hoàn chỉnh bằng Docker Compose."
           }
         ]
+      },
+      {
+        "id": "gearshop-store",
+        "title": "GearShop Store | Hệ Thống Thương Mại Điện Tử",
+        "description": "Hệ thống thương mại điện tử hỗ trợ mua sắm trực tuyến, tìm kiếm và lọc sản phẩm, quản lý giỏ hàng, đặt hàng và theo dõi đơn hàng, trang quản trị, tích hợp VNPAY Sandbox.",
+        "tags": [
+          "Spring Boot",
+          "React",
+          "VNPAY",
+          "MySQL",
+          "Docker"
+        ],
+        "image": "./assets/project_shophub.png",
+        "hasCaseStudy": true,
+        "caseStudyText": "VIEW CASE STUDY // DETAIL",
+        "githubUrl": "https://github.com/Huy210205/ShopHub.git",
+        "techStack": [
+          "Java",
+          "Spring Boot",
+          "React",
+          "Tailwind CSS",
+          "Vite",
+          "MySQL",
+          "Docker",
+          "VNPAY Sandbox"
+        ],
+        "features": [
+          {
+            "title": "Mua sắm & Tìm kiếm & Lọc sản phẩm",
+            "description": "Hỗ trợ người dùng tìm kiếm nhanh chóng, lọc sản phẩm đa tiêu chí theo danh mục, khoảng giá và trạng thái sản phẩm với giao diện tối ưu hiển thị mượt mà."
+          },
+          {
+            "title": "Quản lý Giỏ hàng & Theo dõi Đơn hàng",
+            "description": "Quản lý giỏ hàng trực quan, cập nhật số lượng tức thì, quy trình thanh toán đặt hàng thuận tiện và theo dõi trạng thái đơn hàng theo thời gian thực."
+          },
+          {
+            "title": "Tích hợp Thanh toán VNPAY Sandbox",
+            "description": "Tích hợp cổng thanh toán trực tuyến VNPAY Sandbox an toàn và bảo mật, hỗ trợ thanh toán qua mã QR/thẻ nội địa kèm cơ chế xác thực chữ ký và xử lý IPN chuẩn xác."
+          },
+          {
+            "title": "Trang Quản trị (Admin Dashboard)",
+            "description": "Bảng điều khiển quản trị toàn diện giúp quản lý sản phẩm, danh mục, tồn kho, đơn đặt hàng và thông tin khách hàng hiệu quả."
+          },
+          {
+            "title": "Kiến trúc & Đóng gói Docker",
+            "description": "Xây dựng Backend RESTful API với Spring Boot, Frontend React (Vite, Tailwind CSS) và container hóa toàn bộ dịch vụ cùng MySQL bằng Docker, dễ dàng triển khai."
+          }
+        ]
       }
     ]
   },

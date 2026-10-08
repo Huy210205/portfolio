@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
-import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, Shield, Copy, Check, KeyRound } from "lucide-react";
+import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, Shield, ShoppingBag, Copy, Check, KeyRound } from "lucide-react";
 import contentData from "../data/contentData.json";
 import { FeaturedProjectsSection, ProjectItem } from "../types";
 import { WordsPullUp } from "./AnimateText";
@@ -16,6 +16,13 @@ const projectDetails: Record<string, { challenge: string; solution: string; outc
     outcome: "Hệ thống số hóa 100% nghiệp vụ, bảo vệ tài khoản người dùng nghiêm ngặt và hỗ trợ sinh viên nhanh chóng, chuẩn xác thông qua chatbot AI.",
     duration: "4 Tháng",
     role: "Full-stack Developer & Identity Engineer"
+  },
+  "gearshop-store": {
+    challenge: "Xây dựng luồng thương mại điện tử toàn diện với khả năng xử lý đơn hàng chính xác, tìm kiếm lọc sản phẩm linh hoạt, đồng bộ giỏ hàng, tích hợp cổng thanh toán trực tuyến an toàn và xây dựng hệ thống quản trị trực quan.",
+    solution: "Sử dụng Java Spring Boot phát triển RESTful API chuẩn hóa, bảo mật; React kết hợp Tailwind CSS và Vite tối ưu trải nghiệm người dùng; tích hợp cổng thanh toán VNPAY Sandbox với cơ chế IPN và container hóa toàn bộ bằng Docker.",
+    outcome: "Hệ thống mua sắm vận hành mượt mà, quản lý đơn hàng và thanh toán trực tuyến an toàn, tin cậy cùng dashboard quản trị tiện lợi, dễ dàng mở rộng và bảo trì.",
+    duration: "3 Tháng",
+    role: "Full-stack Developer"
   },
   "websecai-project": {
     challenge: "Tự động hóa toàn diện quy trình rà soát lỗ hổng web phức tạp (SQLi, XSS, CSRF, LFI) với độ chính xác cao, đồng thời phân cấp mức độ nguy hại chuẩn xác và đưa ra chỉ dẫn khắc phục chi tiết theo ngữ cảnh thực tế.",
@@ -116,6 +123,9 @@ export default function Projects() {
                       <div className="flex items-center gap-2.5">
                         {project.id === "sis-project" && (
                           <GraduationCap className="w-5 h-5 text-[#DEDBC8]" />
+                        )}
+                        {(project.id === "gearshop-store" || project.id === "shophub-project") && (
+                          <ShoppingBag className="w-5 h-5 text-[#DEDBC8]" />
                         )}
                         {project.id === "websecai-project" && (
                           <Shield className="w-5 h-5 text-[#DEDBC8]" />
