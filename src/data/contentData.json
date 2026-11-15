@@ -335,6 +335,57 @@
             "description": "Xây dựng Backend RESTful API với Spring Boot, Frontend React (Vite, Tailwind CSS) và container hóa toàn bộ dịch vụ cùng MySQL bằng Docker, dễ dàng triển khai."
           }
         ]
+      },
+      {
+        "id": "book-network-project",
+        "title": "BookSocial | Nền Tảng Mạng Xã Hội Dành Cho Người Yêu Sách (Practice Project)",
+        "description": "Hệ thống mạng xã hội dành cho người yêu sách, hỗ trợ đăng ký/đăng nhập, quản lý hồ sơ người dùng, chia sẻ bài viết, trò chuyện, tìm kiếm nội dung, quản lý sách, lưu trữ hình ảnh và gửi thông báo qua email. Xây dựng theo kiến trúc Microservices với API Gateway và giao tiếp bất đồng bộ bằng Apache Kafka.",
+        "tags": [
+          "Spring Boot",
+          "Microservices",
+          "Kafka",
+          "Docker",
+          "Neo4j"
+        ],
+        "image": "./assets/project_booksocial.png",
+        "hasCaseStudy": true,
+        "caseStudyText": "VIEW CASE STUDY // DETAIL",
+        "githubUrl": "https://github.com/Huy210205/microservices.git",
+        "techStack": [
+          "Java",
+          "Spring Boot",
+          "Spring Cloud Gateway",
+          "Spring Security",
+          "OpenFeign",
+          "Apache Kafka",
+          "ReactJS",
+          "MySQL",
+          "MongoDB",
+          "Neo4j",
+          "Docker Compose"
+        ],
+        "features": [
+          {
+            "title": "Kiến trúc Microservices & API Gateway",
+            "description": "Xây dựng hệ thống phân tán theo kiến trúc Microservices, quản lý định tuyến tập trung và bảo mật qua Spring Cloud Gateway, giao tiếp nội bộ giữa các service thông qua OpenFeign."
+          },
+          {
+            "title": "Xử lý Bất đồng bộ với Apache Kafka (Event-driven)",
+            "description": "Triển khai kiến trúc hướng sự kiện (Event-driven) với Apache Kafka làm Message Broker, tối ưu hóa xử lý các luồng tác vụ ngầm bất đồng bộ như gửi thông báo email và phân phối tương tác."
+          },
+          {
+            "title": "Lưu trữ Đa Cơ sở Dữ liệu (Polyglot Persistence)",
+            "description": "Kết hợp linh hoạt MySQL (dữ liệu quan hệ, giao dịch tài khoản), MongoDB (lưu trữ linh hoạt bài đăng, nội dung sách) và Neo4j (cơ sở dữ liệu đồ thị quản lý quan hệ bạn bè, kết nối mạng xã hội)."
+          },
+          {
+            "title": "Tính năng Mạng Xã Hội & Quản lý Sách Toàn diện",
+            "description": "Hỗ trợ xác thực bảo mật với Spring Security (JWT), quản lý hồ sơ người dùng, đăng tải và tương tác bài viết, tìm kiếm nội dung thông minh, quản lý danh mục sách, lưu trữ hình ảnh và trò chuyện."
+          },
+          {
+            "title": "Đóng gói & Điều phối Hệ thống bằng Docker Compose",
+            "description": "Container hóa toàn bộ các microservices và các hệ quản trị cơ sở dữ liệu (MySQL, MongoDB, Neo4j, Kafka) bằng Docker Compose, đảm bảo môi trường đồng nhất và vận hành ổn định."
+          }
+        ]
       }
     ]
   },

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
-import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, Shield, ShoppingBag, Copy, Check, KeyRound, Workflow } from "lucide-react";
+import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, Shield, ShoppingBag, Copy, Check, KeyRound, Workflow, BookOpen } from "lucide-react";
 import contentData from "../data/contentData.json";
 import { FeaturedProjectsSection, ProjectItem } from "../types";
 import { WordsPullUp } from "./AnimateText";
@@ -23,6 +23,13 @@ const projectDetails: Record<string, { challenge: string; solution: string; outc
     outcome: "Cung cấp trải nghiệm vẽ và trực quan hóa sơ đồ mượt mà, tính năng chia sẻ lộ trình bằng Share Code tiện lợi, hệ thống hoạt động ổn định và tin cậy được kiểm thử toàn diện.",
     duration: "3 Tháng",
     role: "Full-stack Developer"
+  },
+  "book-network-project": {
+    challenge: "Thiết kế và vận hành kiến trúc Microservices phân tán phức tạp với nhiều service độc lập, xử lý luồng giao tiếp bất đồng bộ tin cậy, giải bài toán lưu trữ dữ liệu đa hệ (Polyglot Persistence) và định tuyến bảo mật tập trung.",
+    solution: "Ứng dụng Spring Cloud Gateway làm cổng API Gateway duy nhất; sử dụng Apache Kafka làm Message Broker cho kiến trúc hướng sự kiện (Event-driven); tích hợp kết hợp MySQL, MongoDB và đồ thị Neo4j; đóng gói toàn bộ với Docker Compose.",
+    outcome: "Xây dựng hoàn chỉnh mạng xã hội sách hiện đại, hệ thống phân tán chịu tải tốt, phân tách trách nhiệm service rõ ràng, dễ dàng mở rộng và bảo trì.",
+    duration: "2 Tháng",
+    role: "Backend / Microservices Developer"
   },
   "gearshop-store": {
     challenge: "Xây dựng luồng thương mại điện tử toàn diện với khả năng xử lý đơn hàng chính xác, tìm kiếm lọc sản phẩm linh hoạt, đồng bộ giỏ hàng, tích hợp cổng thanh toán trực tuyến an toàn và xây dựng hệ thống quản trị trực quan.",
@@ -133,6 +140,9 @@ export default function Projects() {
                         )}
                         {project.id === "betterflow-project" && (
                           <Workflow className="w-5 h-5 text-[#DEDBC8]" />
+                        )}
+                        {project.id === "book-network-project" && (
+                          <BookOpen className="w-5 h-5 text-[#DEDBC8]" />
                         )}
                         {(project.id === "gearshop-store" || project.id === "shophub-project") && (
                           <ShoppingBag className="w-5 h-5 text-[#DEDBC8]" />
