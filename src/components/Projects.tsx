@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
-import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, Shield, ShoppingBag, Copy, Check, KeyRound } from "lucide-react";
+import { ExternalLink, ArrowRight, X, CheckCircle, GraduationCap, Shield, ShoppingBag, Copy, Check, KeyRound, Workflow } from "lucide-react";
 import contentData from "../data/contentData.json";
 import { FeaturedProjectsSection, ProjectItem } from "../types";
 import { WordsPullUp } from "./AnimateText";
@@ -16,6 +16,13 @@ const projectDetails: Record<string, { challenge: string; solution: string; outc
     outcome: "Hệ thống số hóa 100% nghiệp vụ, bảo vệ tài khoản người dùng nghiêm ngặt và hỗ trợ sinh viên nhanh chóng, chuẩn xác thông qua chatbot AI.",
     duration: "4 Tháng",
     role: "Full-stack Developer & Identity Engineer"
+  },
+  "betterflow-project": {
+    challenge: "Xây dựng công cụ vẽ sơ đồ và lộ trình học tập tương tác với khả năng đồng bộ hai chiều thời gian thực giữa Markdown và Canvas, tự động tính toán sắp xếp layout và lưu trữ cấu trúc node/edge phức tạp linh hoạt.",
+    solution: "Ứng dụng @xyflow/react kết hợp thuật toán Dagre tự động sắp xếp sơ đồ; xây dựng Markdown Playground hai chiều; phát triển RESTful API bảo mật với Node.js (Express), tối ưu lưu trữ node & edge bằng JSONB trên PostgreSQL và kiểm thử E2E tự động bằng Playwright.",
+    outcome: "Cung cấp trải nghiệm vẽ và trực quan hóa sơ đồ mượt mà, tính năng chia sẻ lộ trình bằng Share Code tiện lợi, hệ thống hoạt động ổn định và tin cậy được kiểm thử toàn diện.",
+    duration: "3 Tháng",
+    role: "Full-stack Developer"
   },
   "gearshop-store": {
     challenge: "Xây dựng luồng thương mại điện tử toàn diện với khả năng xử lý đơn hàng chính xác, tìm kiếm lọc sản phẩm linh hoạt, đồng bộ giỏ hàng, tích hợp cổng thanh toán trực tuyến an toàn và xây dựng hệ thống quản trị trực quan.",
@@ -123,6 +130,9 @@ export default function Projects() {
                       <div className="flex items-center gap-2.5">
                         {project.id === "sis-project" && (
                           <GraduationCap className="w-5 h-5 text-[#DEDBC8]" />
+                        )}
+                        {project.id === "betterflow-project" && (
+                          <Workflow className="w-5 h-5 text-[#DEDBC8]" />
                         )}
                         {(project.id === "gearshop-store" || project.id === "shophub-project") && (
                           <ShoppingBag className="w-5 h-5 text-[#DEDBC8]" />

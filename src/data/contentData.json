@@ -186,6 +186,57 @@
         ]
       },
       {
+        "id": "betterflow-project",
+        "title": "Betterflow | Hệ thống Xây dựng Lộ trình Học tập & Sơ đồ Tương tác",
+        "description": "Hệ thống xây dựng lộ trình học tập và sơ đồ tương tác, hỗ trợ kéo thả kết nối node, tích hợp Dagre tự động sắp xếp sơ đồ, Markdown Playground chuyển đổi hai chiều thời gian thực và chia sẻ lộ trình bằng Share Code.",
+        "tags": [
+          "React 19",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "@xyflow/react"
+        ],
+        "image": "./assets/project_betterflow.png",
+        "hasCaseStudy": true,
+        "demoUrl": "https://betterflow-web.vercel.app/login",
+        "demoButtonText": "TRẢI NGHIỆM HỆ THỐNG // LIVE DEMO",
+        "githubUrl": "https://github.com/ch1nhcp/better-flow.git",
+        "techStack": [
+          "React 19",
+          "TypeScript",
+          "Node.js (Express)",
+          "PostgreSQL (JSONB)",
+          "@xyflow/react",
+          "Dagre",
+          "TanStack Query",
+          "Tailwind CSS",
+          "Playwright",
+          "GitHub Actions"
+        ],
+        "features": [
+          {
+            "title": "Canvas Kéo Thả & Tự Động Sắp Xếp Sơ Đồ",
+            "description": "Phát triển Canvas kéo thả và kết nối các node trực quan với @xyflow/react, tích hợp thuật toán Dagre để tự động tính toán layout và sắp xếp sơ đồ mượt mà, tối ưu không gian hiển thị."
+          },
+          {
+            "title": "Markdown Playground Hai Chiều Thời Gian Thực",
+            "description": "Xây dựng Markdown Playground, hỗ trợ đồng bộ và chuyển đổi hai chiều giữa cú pháp Markdown và sơ đồ trực quan theo thời gian thực."
+          },
+          {
+            "title": "RESTful API & Lưu Trữ Node/Edge bằng JSONB",
+            "description": "Xây dựng RESTful API xác thực bảo mật bằng JWT, tối ưu hóa lưu trữ dữ liệu node và edge linh hoạt bằng trường JSONB trên PostgreSQL."
+          },
+          {
+            "title": "Bảo Mật SQL & Tính Năng Chia Sẻ Lộ Trình",
+            "description": "Sử dụng Parameterized Query chống SQL Injection, phát triển tính năng chia sẻ lộ trình học tập tiện lợi bằng Share Code."
+          },
+          {
+            "title": "Kiểm Thử E2E với Playwright & CI/CD",
+            "description": "Viết kiểm thử E2E bằng Playwright cho các luồng đăng ký, đăng nhập và giao diện responsive; tích hợp tự động hóa qua GitHub Actions."
+          }
+        ]
+      },
+      {
         "id": "websecai-project",
         "title": "WEBSECAI | Hệ thống Phân tích & Đánh giá Lỗ hổng Bảo mật Website",
         "description": "Hệ thống phân tích và đánh giá lỗ hổng bảo mật website, hỗ trợ tự động thu thập và quét các lỗ hổng SQL Injection, XSS, CSRF, LFI, sử dụng Machine Learning để phân loại mức độ nghiêm trọng và LLM để hỗ trợ đưa ra hướng dẫn khắc phục.",
